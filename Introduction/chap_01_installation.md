@@ -462,3 +462,7 @@ dump($this->beers_api());
     {% endfor %}
 
 ```
+
+Wireframe 
+
+![beers](images/bar_03_beers.jpg)
