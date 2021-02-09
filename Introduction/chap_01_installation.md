@@ -466,3 +466,66 @@ dump($this->beers_api());
 Wireframe 
 
 ![beers](images/bar_03_beers.jpg)
+
+
+## Menu principal
+
+Créez le menu nous l'importerons dans le fichier **base.html.twig**, faites un fichier menu.html.twig que nous placerons dans un dossier partials. Voici la syntaxe pour importer le menu dans base.html.twig et le code HTML :
+
+- Import du menu
+
+```html
+{% include 'partials/menu.html.twig' %}
+```
+
+- Le menu HTML
+
+```html
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">The Simple Bar/beers</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+```
+
+## Exercice route et href dans le menu
+
+Puis utilisez dans le template le helper (fonction Symfony) suivant : path, créez le lien vers la page home, puis le lien vers la page show_beer pour afficher une page spécifique (bières belges par exemple) :
+
+Utilisez le helper path, créez un lien vers une page d'accueil, un lien vers la page affichant les bières et enfin un lien vers les mentions légales :
+
+```html
+<!-- dans le menu -->
+<a href="{{ path('home') }}">Home</a>
+
+{# show_beer nom de la route #}
+<a href="{{ path('beers') }}">Beer Belgium</a>
+
+```
+
+## Exercice classe active sur un lien cliqué
+
+Définissez une classe active sur les liens actifs. Utilisez la syntaxe suivante dans Twig pour récupérer la valeur de la route du lien suivi :
+
+```html
+{% set route_name = app.request.attributes.get('_route') %}
+```
+
+## Exercice images statiques
+
+Trouvez des images de bières et placez ces images pour accompagner nos bières sur la page beers de l'application. Voyez la syntaxe suivante :
+
+```html
+<img src="{{ asset('assets/images/mon_image.png') }}" />
+```
