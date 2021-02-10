@@ -529,3 +529,24 @@ Trouvez des images de bières et placez ces images pour accompagner nos bières 
 ```html
 <img src="{{ asset('assets/images/mon_image.png') }}" />
 ```
+
+## Exercices database
+
+Dépendances pour utiliser Doctrine
+
+```bash
+composer require symfony/orm-pack
+composer require --dev symfony/maker-bundle
+```
+
+Une fois ces lignes exécutées vous devriez remarquer que dans votre fichier .env vous avez maintenant la possiblité de définir les paramètres vous permettant de vous connecter à votre base de données depuis l'application :
+
+```text
+# DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=5.7"
+```
+
+Décommentez cette ligne pour créer la base de données db_bar dans MySQL.
+
+```text
+DATABASE_URL="mysql://root:root@127.0.0.1:8889/db_bafr?serverVersion=5.7"
+```
