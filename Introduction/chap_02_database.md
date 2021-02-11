@@ -1,16 +1,17 @@
 # Symfony et Doctrine
 
-Nous allons dans ce chapitre mettre en place la base de données et découvrir Doctrine.
+Nous allons mettre en place la persistence des données. Nous utiliserons MySQL et Doctrine dans Symfony pour définir nos entités.
 
-Pour cela nous allons installer le composant Doctrine, c'est un ORM (object relation model) une couche d'abstraction PHP objet sur les données.
 
-*Ces deux composant ou bundle permettront respectivement d'avoir l'ORM Doctrine et les commandes make associées.*
+- Dépendances : d'une part l'ORM Doctrine et d'autre part les maker que vous connaissez déjà et qui nous permettrons de créer nos entités.
 
 ```bash
 composer require symfony/orm-pack
 composer require --dev symfony/maker-bundle
 
 ```
+
+Une fois Doctrine installé, le fichier .env est modifié. Vous devez renseigner les informations demandées dans ce fichier pour rendre effectif la connexion au serveur de base de données.
 
  Dans le fichier .env - fichier de configuration des constantes de l'application - à la racine du projet renseignez le nom de votre base de données ainsi que les login/password, adaptez le code à vos besoin ci-dessous :
 
