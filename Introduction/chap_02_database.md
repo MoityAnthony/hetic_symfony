@@ -142,7 +142,7 @@ Ajoutez maintenant des catégories dans la table category de votre base de donn�
 
 1. Créez la catégorie blonde et assoiez cette catégorie à vos bière déjà créées.
 
-2. Créez une bière Ardèche et associez cette bière à vos catégories.
+2. Créez une bière Ardèche et associez cette bière à des catégories, pensez à créer quelques catégories au préalable.
 
 ## Exercice Fixtures Doctrine, insertion de données dans les tables
 
