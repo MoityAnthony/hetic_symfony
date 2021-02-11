@@ -135,6 +135,8 @@ Créez maintenant dans le contrôleur BarController la méthode suivante **creat
 
 ```
 
+Ajoutez maintenant des catégories dans la table category de votre base de données.
+
 ## Exercice Fixtures Doctrine, insertion de données dans les tables
 
 Nous allons maintenant utiliser des fixtures pour insérer des données d'exemple dans la ressource Beer en base de données, en ligne de commande tapez :
