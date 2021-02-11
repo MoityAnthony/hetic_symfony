@@ -138,9 +138,11 @@ Créez maintenant dans le contrôleur BarController la méthode suivante **creat
 Ajoutez maintenant des catégories dans la table category de votre base de données.
 
 
-## Exercice une catégorie liée à un bière
+## Exercice bières et catégories
 
-Créez la catégorie blonde et assoiez cette catégorie à vos bière déjà créées.
+1. Créez la catégorie blonde et assoiez cette catégorie à vos bière déjà créées.
+
+2. Créez une bière Ardèche et associez cette bière à vos catégories.
 
 ## Exercice Fixtures Doctrine, insertion de données dans les tables
 
