@@ -202,11 +202,6 @@ Indication, vous pouvez créer des données personnelles (noms de bière) puis u
 Pour plus d'information sur ces commandes reportez-vous à la documentation officiel :
 [Fixture](https://symfony.com/doc/master/bundles/DoctrineFixturesBundle/index.html)
 
-## Exercice Affichez les bières en page d'accueil
-
-Vous allez maintenant afficher les bières en page d'accueil. Pour cela vous allez utiliser la classe Repository de l'entité Beer.
-
-Dans le contrôleur BarController Symfony met à notre disposition, sous forme d'un service, Doctrine. Nous pouvons donc utiliser le repository Beer et sa méthode findAll comme suit pour récupérer l'ensemble des ressources de cette table :
 
 ```php
 
