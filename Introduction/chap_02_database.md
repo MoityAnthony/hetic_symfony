@@ -227,7 +227,9 @@ Affichez maintenant les bières sur la page beer. Notez que la syntaxe dans le t
 
 ## Exercice Ajoutez un champ price et un champ degree
 
-Reprenez l'entité Beer et ajouter un price à celle-ci. Pour se faire il suffit de relancer la commande suivante, notez que pour un décimale vous préciserez que ce dernier est sur 5 chiffres significatifs avec 2 chiffres après la virgule :
+Reprenez l'entité Beer et ajouter un price et degree à celle-ci. Pour se faire il suffit de relancer la commande suivante, notez que pour un décimale vous préciserez que ce dernier est sur 5 chiffres significatifs avec 2 chiffres après la virgule pour price et degree.
+
+Attention le degree est un champ obligatoire, le prix est facultatif.
 
 ```bash
 
@@ -235,7 +237,8 @@ Reprenez l'entité Beer et ajouter un price à celle-ci. Pour se faire il suffit
 php bin/console make:entity
 
 # Créez le fichier de migration en tenant compte de
-# l'état de la base de données et des entités
+# l'état de la base de données et des entités => elle se connecte à la base de données
+# et étudie la différence
 php bin/console doctrine:migrations:diff
 
 ```
