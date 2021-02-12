@@ -230,7 +230,7 @@ Affichez maintenant les bières sur la page beer. Notez que la syntaxe dans le t
 
 ```
 
-## Exercice Ajoutez un champ price
+## Exercice Ajoutez un champ price et un champ degree
 
 Reprenez l'entité Beer et ajouter un price à celle-ci. Pour se faire il suffit de relancer la commande suivante, notez que pour un décimale vous préciserez que ce dernier est sur 5 chiffres significatifs avec 2 chiffres après la virgule :
 
