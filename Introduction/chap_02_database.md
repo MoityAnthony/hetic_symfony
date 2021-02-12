@@ -191,11 +191,13 @@ class AppFixtures extends Fixture
 
 ## Exercice Faker et AppFixtures
 
-Insérez des données à l'aide de AppFixture et de Faker, puis tapez la ligne de commande suivante :
+Insérez des bières à l'aide de AppFixture et de Faker, puis tapez la ligne de commande suivante :
 
 ```bash
 php bin/console doctrine:fixtures:load
 ```
+
+Indication, vous pouvez créer des données personnelles (noms de bière) puis utilisez Faker pour donner une description de chacune de vos bière.
 
 Pour plus d'information sur ces commandes reportez-vous à la documentation officiel :
 [Fixture](https://symfony.com/doc/master/bundles/DoctrineFixturesBundle/index.html)
