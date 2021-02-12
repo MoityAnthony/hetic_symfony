@@ -255,27 +255,6 @@ Dans AppFixtures créez des pays, voir la liste ci-dessous, puis en utilisant se
 $countries = ['belgium', 'french', 'English', 'germany'];
 ```
 
-## Routes beer
-
-Ajoutez un lien dans le code Twig de la page d'accueil pour accéder à la page affichant les bières d'un pays. Vous afficherez ce lien pour chaque bière (si la bière est associé à un pays), voyez ce lien comme un tag ou mot clé de la bière.
-
-Vous devez créer une action (méthode), par exemple show_beer, dans le contrôleur BarController. Attention cette méthode possède un paramètre qui est techniquement l'identifiant unique correspondant au pays.
-
-Pour le lien vous utiliserez le helper de Symfony "path" de la manière suivante :
-
-```html
-{#
-Twig
-Votre url aura la forme suivante : http://localhost:8000/country/1
-notez que country_beer est le nom de votre route (voir les annotations)
-#}
-{% if beer.country %}
-    <a href="{{ path('country_beer', { 'id' : beer.country.id }) }}">
-        {{ beer.country.name }}
-    </a>
-{% endif %}
-```
-
 ## Catégories
 
 Modifiez l'entité Category et ajoutez un champ "term", par défaut ce champ est "normal".
