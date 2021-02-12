@@ -215,7 +215,7 @@ $beers = $repository->findAll();
 
 ```
 
-Affichez maintenant les bières en page d'accueil. Notez que la syntaxe dans le template Twig pour afficher les données est différentes du PHP habituel :
+Affichez maintenant les bières sur la page beer. Notez que la syntaxe dans le template Twig pour afficher les données est différentes du PHP habituel. Utilisez l'affichage HTML/CSS que l'on a déjà mis en place sur cette page.
 
 ```html
 
