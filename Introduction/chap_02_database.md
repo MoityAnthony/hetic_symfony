@@ -243,7 +243,7 @@ php bin/console doctrine:migrations:diff
 
 ```
 
-Mettez à jour les fixtures en ajoutant à l'aide de faker des prix à vos bières.
+Mettez à jour les fixtures en ajoutant à l'aide de faker des prix et des degrées à vos bières.
 
 ![database schema](images/simplebar_02.png)
 
