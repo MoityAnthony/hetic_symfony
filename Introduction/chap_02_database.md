@@ -191,20 +191,17 @@ class AppFixtures extends Fixture
 
 ## Exercice Faker et AppFixtures
 
-Insérez des données à l'aide de AppFixture et de Faker, puis tapez la ligne de commande suivante :
+Insérez des bières à l'aide de AppFixture et de Faker, puis tapez la ligne de commande suivante :
 
 ```bash
 php bin/console doctrine:fixtures:load
 ```
 
+Indication, vous pouvez créer des données personnelles (noms de bière) puis utilisez Faker pour donner une description de chacune de vos bière.
+
 Pour plus d'information sur ces commandes reportez-vous à la documentation officiel :
 [Fixture](https://symfony.com/doc/master/bundles/DoctrineFixturesBundle/index.html)
 
-## Exercice Affichez les bières en page d'accueil
-
-Vous allez maintenant afficher les bières en page d'accueil. Pour cela vous allez utiliser la classe Repository de l'entité Beer.
-
-Dans le contrôleur BarController Symfony met à notre disposition, sous forme d'un service, Doctrine. Nous pouvons donc utiliser le repository Beer et sa méthode findAll comme suit pour récupérer l'ensemble des ressources de cette table :
 
 ```php
 
@@ -213,7 +210,7 @@ $beers = $repository->findAll();
 
 ```
 
-Affichez maintenant les bières en page d'accueil. Notez que la syntaxe dans le template Twig pour afficher les données est différentes du PHP habituel :
+Affichez maintenant les bières sur la page beer. Notez que la syntaxe dans le template Twig pour afficher les données est différentes du PHP habituel. Utilisez l'affichage HTML/CSS que l'on a déjà mis en place sur cette page.
 
 ```html
 
@@ -228,9 +225,11 @@ Affichez maintenant les bières en page d'accueil. Notez que la syntaxe dans le 
 
 ```
 
-## Exercice Ajoutez un champ price
+## Exercice Ajoutez un champ price et un champ degree
 
-Reprenez l'entité Beer et ajouter un price à celle-ci. Pour se faire il suffit de relancer la commande suivante, notez que pour un décimale vous préciserez que ce dernier est sur 5 chiffres significatifs avec 2 chiffres après la virgule :
+Reprenez l'entité Beer et ajouter un price et degree à celle-ci. Pour se faire il suffit de relancer la commande suivante, notez que pour un décimale vous préciserez que ce dernier est sur 5 chiffres significatifs avec 2 chiffres après la virgule pour price et degree.
+
+Attention le degree est un champ obligatoire, le prix est facultatif.
 
 ```bash
 
@@ -238,11 +237,12 @@ Reprenez l'entité Beer et ajouter un price à celle-ci. Pour se faire il suffit
 php bin/console make:entity
 
 # Créez le fichier de migration en tenant compte de
-# l'état de la base de données et des entités
+# l'état de la base de données et des entités => elle se connecte à la base de données
+# et étudie la différence
 php bin/console doctrine:migrations:diff
 
 ```
 
-Mettez à jour les fixtures en ajoutant à l'aide de faker des prix à vos bières.
+Mettez à jour les fixtures en ajoutant à l'aide de faker des prix et des degrées à vos bières.
 
 ![database schema](images/simplebar_02.png)
