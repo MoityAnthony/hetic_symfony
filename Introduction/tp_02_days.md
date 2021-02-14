@@ -3,7 +3,7 @@
 
 Lisez attentivement ce TP tout est détaillé pour réaliser le projet The Simple Bar.
 
-La partie 1 & 2 est obligatoire. La partie 3 est facultative.
+Les parties 1 & 2 sont obligatoires. La partie 3 est facultative.
 
 ## Partie 1
 
