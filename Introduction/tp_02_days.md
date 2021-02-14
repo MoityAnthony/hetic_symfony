@@ -1,19 +1,19 @@
 
 # TP
 
-Lisez attentivement ce TP tout est détaillé pour réaliser le projet The Simple Bar.
+Lisez attentivement ce TP tout est détaillé pour réaliser le projet The Simple Bar. Vous avez deux jours pour le réaliser : lundi & mercredi.
 
-Les parties 1 & 2 sont obligatoires. La partie 3 est facultative.
+Les parties 1 & 2 sont obligatoires. La partie 3 est facultative mais, si vous avez terminé avant essayer de la faire.
 
 ## Partie 1
 
-Vous avez au moins 20 bières dans la table beer. Vous pouvez utiliser le dépôt suivant pour vous aidez :
+Rappel : vous avez au moins 20 bières dans la table beer. Vous pouvez utiliser le dépôt suivant pour vous aidez (corrections des exercices précédents) :
 
-[Soucre](https://github.com/Antoine07/bar)
+[Corrections](https://github.com/Antoine07/bar)
 
-### Création des countries AppFixtures
+### Création des countries, AppFixtures
 
-Dans AppFixtures créez les pays suivants, voir la liste ci-dessous, puis en utilisant setCountry de Beer associez un pays à une bière :
+Dans AppFixtures créez les pays suivants, voir la liste ci-dessous, puis en utilisant setCountry de Beer associez un pays au moins à une bière :
 
 ```php
 $countries = ['belgium', 'french', 'English', 'germany'];
@@ -21,9 +21,11 @@ $countries = ['belgium', 'french', 'English', 'germany'];
 
 ### Catégories et bières AppFixtures
 
-Attention, si ce n'est pas déjà fait vous devez modifier la structure de la table category avant d'ajouter les catégories aux bières.
+Avant d'ajouter les catégories vous devez modifier sa structure.
 
-- Modifiez l'entité Category et ajoutez un champ "term", par défaut ce champ est "normal" ajoutez dans l'entité Category le code suivant au-dessus du champ term :
+- Modifiez l'entité Category et ajoutez un champ "term" de type string 100 caractères non nul, par défaut ce champ est "normal".
+
+Ajoutez dans l'entité Category le code suivant au-dessus du champ **term** :
 
 ```php
 /**
@@ -32,7 +34,7 @@ Attention, si ce n'est pas déjà fait vous devez modifier la structure de la ta
 private $term ;
 ```
 
-Ainsi que dans le constructeur de l'entité, ainsi à chaque fois que vous créez une catégorie par défaut la valeur "normal" sera attribuée au champ term :
+Ainsi que dans le constructeur de l'entité ajoutez le setter suivant. A chaque fois que vous créez une nouvelle catégorie la valeur "normal" sera alors attribuée par défaut au champ term :
 
 ```php
  public function __construct()
@@ -42,15 +44,15 @@ Ainsi que dans le constructeur de l'entité, ainsi à chaque fois que vous crée
     }
 ```
 
-Lorsque vous modifiez une entité pensez à vérifier sa cohérence en base de données pour créez une nouvelle migration qui modifiera la structure de la table :
+Migration et modification de la structure de la table.
 
-1. Création de la migration et vérification de la cohérence de la base de données 
+1. Création de la migration en fonction de la cohérence des donnes dans la/les table(s) 
 
 ```bash
 php bin/console doctrine:migrations:diff
 ```
 
-2. Créez les modifications en base de données
+2. Créez effectivement les modifications en base de données
 
 ```bash
 php bin/console doctrine:migrations:migrate
@@ -71,9 +73,9 @@ $categoriesSpecials = ['houblon', 'rose', 'menthe', 'grenadine', 'réglisse', 'm
 
 ### Page d'accueil & page d'une bière
 
-Créez une méthode (repository) qui affiche pour l'instant les 3 dernières bières de votre table beer. Vous afficherez son nom et sa description. Chaque nom de bière sera cliquable. Le lien conduira à la page de présentation de la bière. Cette page affichera le nom de la bière, sa description, son prix, son degré, son pays et ses deux catégories normale (Blonde, Brune, ...) et spéciale (Houblon, bio, ...).
+Créez une méthode dans le repository **BeerRepository** qui vous permettra d'afficher les 3 dernières bières de votre table beer sur la page d'accueil, vous afficherez son nom et sa description. Chaque nom de bière sera cliquable. Le lien conduira à la page de présentation de la bière. Elle affichera le nom de la bière, sa description, son prix, son degré, son pays et ses deux catégories normale (Blonde, Brune, ...) et spéciale(s) (Houblon, bio, ...).
 
-Voyez les Wireframes de cette section ci-après pour vous aidez à réaliser ces pages.
+Voyez les Wireframes ci-après pour vous aidez à réaliser ces deux pages.
 
 - Exemple de la création d'une méthode dans le repository :
 
@@ -92,7 +94,7 @@ public function findByExampleField($value)
 }
 ```
 
-La méthode du repository sera à utiliser comme suit dans vos contrôleurs ou Fixtures (données d'exemple)
+La méthode du repository sera à utiliser comme suit dans vos contrôleurs ou Fixtures :
 
 - Appelle de la méthode dans un Controller
 
@@ -108,7 +110,7 @@ $repoBeer = $manager->getRepository(Beer::class);
 $repoBeer->findByExampleField(1);
 ```
 
-Gestion des routes dans les pages Twig avec le helper path
+Gestion des routes dans les pages Twig avec le helper **path**
 
 ```php
 {#
@@ -139,7 +141,7 @@ $repoBeer = $this->getDoctrine()->getRepository(Beer::class);
 $repoBeer->find(1);
 ```
 
-Vous devez également créer une méthode findByTerm pour récupérer la catégorie spéciale dans la page d'une bière. Créez cette méthode dans le repository BeerRepository
+Vous devez également créer une méthode **findByTerm** pour récupérer la catégorie spéciale dans la page d'une bière. Créez cette méthode dans le repository BeerRepository
 
 ```php
 $repoBeer = $this->getDoctrine()->getRepository(Beer::class);
@@ -181,10 +183,11 @@ Sidebar |
 
 ### Main menu
 
-Nous allons utilisez le helper **render** de Twig pour afficher notre menu principal. Il remplacera le code que nous avons écrit dans le fichier main_menu.html.twig. Notez la présence du paramètre d'URL **routeName** que nous avons défini dans le code ci-après. Il permet de récupérer le nom de la route pour définir la classe active du lien actif.
+Nous allons utilisez le helper **render** de Twig pour afficher notre menu principal. Il remplacera le code que nous avons écrit dans le fichier main_menu.html.twig. Notez la présence du paramètre d'URL **routeName** que nous avons défini dans le code ci-après, il permet de récupérer le nom de la route pour définir la classe active du lien actif.
 
 Chacune des catégories affichera ses propres bières, même disposition que la page d'accueil.
-Voyez les Wireframes ci-après, retirez le lien beers si ce dernier existe dans le menu précédent.
+
+Voyez les Wireframes ci-après, pensez à retirer le lien beers si ce dernier existe encore dans le menu.
 
 1. Créez une méthode mainMenu dans BarController comme suit, et récupérez les noms des catégories normales pour les afficher dans le menu principal.
 
@@ -195,12 +198,12 @@ Voyez les Wireframes ci-après, retirez le lien beers si ce dernier existe dans 
 public function mainMenu(Request $request): Response{
     dump($request->get('routeName'));
 
-    return new Response('TODO MENU');
+    return new Response('TODO MENU TWIG');
 }
 
 ```
 
-2. Appelez cette méthode dans le template Twig  main_menu.html.twig à la place du précédent menu.
+2. Appelez cette méthode dans le template Twig main_menu.html.twig.
 
 ```php
 {{render(controller('App\\Controller\\BarController:mainMenu',
@@ -210,7 +213,7 @@ public function mainMenu(Request $request): Response{
 
 ```
 
-- Menu principale avec les catégories normales cliquables
+- Menu principale avec les catégories blonde, brune, et blanche normales cliquables
 
 ```text
 ------------------------------------------
@@ -295,12 +298,14 @@ Ajoutez un champ age à l'entité Client. Mettez à jour la base de données. Et
 
 ### Menu principal
 
-Ajoutez maintenant le lien Statistic dans le menu principal de l'application et affichez dans la colonne de droite le nombre de client et dans la colonne de gauche le nom des clients et le nombre de bière acheté :
+Ajoutez maintenant le lien Statistic dans le menu principal de l'application et affichez dans la colonne de droite le nombre de client et dans la colonne de gauche le nom des clients et le nombre de bière(s) achetée(s) :
 
 ```text
 ------------------------------------------
 The simple Bar/Beer Home blonde brune blanche Mentions [Statistic]
 ------------------------------------------
-Nombre de clients : 10 |   Tony age 56 nombre de bière acheté : 17
-                       |   Alice age 45 nombre de bière acheté : 11
+Nombre de clients : 10 |   Tony, age 56 ans, nombre de bière acheté : 17
+                       |   Alice, age 45 ans, nombre de bière acheté : 11
 ```
+
+Ajoutez d'autre statistiques de votre choix si vous avez terminé.
