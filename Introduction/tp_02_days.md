@@ -195,8 +195,8 @@ Voyez les Wireframes ci-après, pensez à retirer le lien beers si ce dernier ex
 /**
 * @Route("/menu", name="menu")
 */
-public function mainMenu(Request $request): Response{
-    dump($request->get('routeName'));
+public function mainMenu(string $category_id, string $routeName): Response{
+    
 
     return new Response('TODO MENU TWIG');
 }
@@ -208,7 +208,8 @@ public function mainMenu(Request $request): Response{
 ```php
 {{render(controller('App\\Controller\\BarController:mainMenu',
   {
-    'routeName' : app.request.attributes.get('_route')
+    'routeName' : app.request.attributes.get('_route'),
+    'category_id' : app.request.attributes.get('id') ?? ''
 }))}}
 
 ```
