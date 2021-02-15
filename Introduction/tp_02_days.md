@@ -299,7 +299,7 @@ Ajoutez un champ age à l'entité Client. Mettez à jour la base de données. Et
 
 ### Menu principal
 
-Ajoutez maintenant le lien Statistic dans le menu principal de l'application et affichez dans la colonne de droite le nombre de client et dans la colonne de gauche le nom des clients et le nombre de bière(s) achetée(s) :
+Ajoutez maintenant le lien Statistic dans le menu principal de l'application et affichez dans la colonne de gauche le nombre de client et dans la colonne de droite le nom des clients et le nombre de bière(s) achetée(s) :
 
 ```text
 ------------------------------------------
