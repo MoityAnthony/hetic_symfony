@@ -310,3 +310,22 @@ Nombre de clients : 10 |   Tony, age 56 ans, nombre de bière acheté : 17
 ```
 
 Ajoutez d'autre statistiques de votre choix si vous avez terminé.
+
+
+## Partie 4
+
+Voici un code Doctrine à écrire dans le Repository CategoryRepository, qu'en pensez vous ? Décrivez son utilité dans l'application si on devait le mettre en place.
+
+```php
+public function findCatSpecial(int $id)
+    {
+        return $this->createQueryBuilder('c')
+            ->join('c.beers', 'b') // raisonner en terme de relation
+            ->where('b.id = :id')
+            ->setParameter('id', $id)
+            ->andWhere('c.term = :term')
+            ->setParameter('term', 'special')
+            ->getQuery()
+            ->getResult();
+    }
+```
