@@ -198,7 +198,7 @@ Voyez les Wireframes ci-après, pensez à retirer le lien beers si ce dernier ex
 public function mainMenu(string $category_id, string $routeName): Response{
     
 
-    return new Response('TODO MENU TWIG');
+    return $this->render('partial/main_menu.html.twig', [ /* TODO */] ;
 }
 
 ```
