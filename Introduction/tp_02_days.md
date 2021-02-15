@@ -3,7 +3,7 @@
 
 Lisez attentivement ce TP tout est détaillé pour réaliser le projet The Simple Bar. Vous avez deux jours pour le réaliser : lundi & mercredi.
 
-Les parties 1 & 2 sont obligatoires. La partie 3 est facultative mais, si vous avez terminé avant essayer de la faire.
+Les parties 1 & 2 sont obligatoires. La partie 3 est facultative mais, si vous avez terminé avant essayer de la faire. La partie 4 est une question à laquelle on vous demande de répondre, elle n'est pas facultative.
 
 ## Partie 1
 
